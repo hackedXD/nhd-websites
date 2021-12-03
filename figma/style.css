@@ -10,7 +10,6 @@
 * {
     margin: 0;
     padding: 0;
-<<<<<<< HEAD
     position: relative;
 }
 
@@ -22,20 +21,6 @@
 }
 
 .button {
-=======
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.button {
-    position: relative;
-
->>>>>>> a8acf50b86b6217b1dbdd595ddde2e7b41390f4e
     display: flex;
     align-items: center;
 
@@ -98,10 +83,7 @@
     -webkit-text-fill-color: transparent;
     pointer-events: none;
 
-<<<<<<< HEAD
     position: relative;
-=======
->>>>>>> a8acf50b86b6217b1dbdd595ddde2e7b41390f4e
     z-index: 100;
 }
 
@@ -123,18 +105,6 @@
     }
 }
 
-<<<<<<< HEAD
-=======
-@keyframes switch-on-container {
-    from {
-        clip-path: circle(45px at 65px 50%);
-    }
-    to {
-        clip-path: circle(45px at 255px 50%);
-    }
-}
-
->>>>>>> a8acf50b86b6217b1dbdd595ddde2e7b41390f4e
 @keyframes switch-off-text {
     from {
         transform: translateY(0px);
