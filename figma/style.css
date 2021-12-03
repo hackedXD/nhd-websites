@@ -10,6 +10,7 @@
 * {
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 .container {
@@ -20,8 +21,6 @@
 }
 
 .button {
-    position: relative;
-
     display: flex;
     align-items: center;
 
@@ -47,6 +46,7 @@
     border-radius: 50%;
     background: #ffffff;
 
+    position: relative;
     z-index: 0;
 
 }
@@ -83,6 +83,7 @@
     -webkit-text-fill-color: transparent;
     pointer-events: none;
 
+    position: relative;
     z-index: 100;
 }
 
@@ -101,15 +102,6 @@
     }
     to {
         background: linear-gradient(270deg, #5D7CF6, #8C4AEF);
-    }
-}
-
-@keyframes switch-on-container {
-    from {
-        clip-path: circle(45px at 65px 50%);
-    }
-    to {
-        clip-path: circle(45px at 255px 50%);
     }
 }
 
