@@ -1,29 +1,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
+:root {
+    --button-width: 300px;
+    --button-height: calc(var(--button-width) * 0.4);
+    --cirle-size: calc(var(--button-height) * 0.75);
+    --text-size: 24px;
+}
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: #ffffff;
-
-    font-size: 24px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
 }
 
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .button {
-    width: 300px;
-    height: 120px;
+    position: relative;
 
-    background: #6C6C6C;
-    border-radius: 100px;
+    display: flex;
+    align-items: center;
+
+    width: var(--button-width);
+    height: var(--button-height);
+
+    background: #6c6c6c;
+    border-radius: var(--button-height);
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: var(--cirle-size);
+    height: var(--cirle-size);
+
+    transform: translateX(20px);
+
+    clip-path: circle(calc(var(--cirle-size) / 2));
+
+    border-radius: 50%;
+    background: #ffffff;
+
+    z-index: 0;
+
+}
+
+.off {
+    font-family: "Montserrat", sans-serif;
+    font-size: var(--text-size);
+    font-weight: 700;
+
+    color: #6c6c6c;
+
+    pointer-events: none;
+}
+
+.on-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    clip-path: circle(45px at 65px 50%);
+}
+
+.on {
+    float: right;
+
+    transform: translate(calc(-20px - var(--text-size)), -100%);
+
+    font-family: "Montserrat", sans-serif;
+    font-size: var(--text-size);
+    font-weight: 700;
+
+    background: linear-gradient(270deg, #5D7CF6, #8C4AEF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    pointer-events: none;
+
+    z-index: 100;
+}
+
+@keyframes switch-circle {
+    from {
+        transform: translateX(20px);
+    }
+    to {
+        transform: translateX(calc(var(--button-width) - var(--cirle-size) - 20px));
+    }
+}
+
+@keyframes switch-color {
+    from {
+        background: #6c6c6c
+    }
+    to {
+        background: linear-gradient(270deg, #5D7CF6, #8C4AEF);
+    }
+}
+
+@keyframes switch-on-container {
+    from {
+        clip-path: circle(45px at 65px 50%);
+    }
+    to {
+        clip-path: circle(45px at 255px 50%);
+    }
+}
+
+@keyframes switch-off-text {
+    from {
+        transform: translateY(0px);
+    } 
+    to {
+        transform: translateY(75px);
+    }
+}
+
+@keyframes switch-on-text {
+    from {
+        transform: translate(calc(-20px - var(--text-size)), -100%);
+    } 
+    to {
+        transform: translate(calc(-20px - var(--text-size)), 45px);
+    }
 }
